@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class CommentController {
-//     @Autowired
-    private final CommentService commentService = new CommentServiceImpl;
+   @Autowired
+    private CommentService commentService;
     @PostMapping("/comment")
     public String addComment(@RequestBody CreateCommentRequest createCommentRequest){
         commentService.createComment(createCommentRequest);
